@@ -17,8 +17,6 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-/////Need to update////////////
-
 Mobile.startApplication('C:\\Users\\USER\\Desktop\\Bank_Linkage\\Subscriber\\app-uat-armeabi-v7a-release.apk', false)
 
 Mobile.delay(80)
@@ -42,27 +40,47 @@ Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (
 Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (5)'), '2', 0)
 
 Mobile.delay(10)
-////////////////
+/////////////////////
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup'), 10)
+Mobile.tap(findTestObject('Object Repository/Cashin_From_Bank/android.view.ViewGroup'), 0)
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - My Wallet'), 0)
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.ViewGroup'), 0)
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (1)'), 0)
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.ViewGroup (1)'), 0)
 
-Mobile.verifyElementText(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - Hi, LAI YEE MAUNG'), 
-    'Hi, LAI YEE MAUNG')
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - LAI YEE MAUNG'), 'LAI YEE MAUNG')
 
-Mobile.verifyElementText(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - LAI YEE MAUNG'), 
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.ViewGroup (2)'), 0)
+
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - 10,000'), '10,000')
+
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.EditText - 10,000'), '10,000')
+
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.View'), 0)
+
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - LAI YEE MAUNG (1)'), 
     'LAI YEE MAUNG')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView -'), 0)
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - 10,000.00 MMK'), '10,000.00 MMK')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (2)'), 0)
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - 10,000.00 MMK (1)'), 
+    '10,000.00 MMK')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (3)'), 0)
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.View (1)'), 0)
 
-Mobile.delay(10)
+for (int i = 0; i <= 2; i++) {
+
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.ViewGroup (3)'), 0)
+
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.ViewGroup (4)'), 0)
+
+}
+
+
+Mobile.verifyElementText(findTestObject('Object Repository/CashOutFromBank/android.widget.TextView - Cash Out Successful'), 
+    'Cash Out Successful')
+
+Mobile.tap(findTestObject('Object Repository/CashOutFromBank/android.view.View (2)'), 0)
 
 Mobile.closeApplication()
 

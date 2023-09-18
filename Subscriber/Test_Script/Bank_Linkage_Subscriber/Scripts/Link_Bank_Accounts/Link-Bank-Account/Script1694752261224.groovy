@@ -17,7 +17,7 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
-/////Need to update////////////
+/////Need To Update//////////
 
 Mobile.startApplication('C:\\Users\\USER\\Desktop\\Bank_Linkage\\Subscriber\\app-uat-armeabi-v7a-release.apk', false)
 
@@ -42,27 +42,53 @@ Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (
 Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (5)'), '2', 0)
 
 Mobile.delay(10)
+
 ////////////////
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup'), 10)
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/UserMenu'), 5)
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - My Wallet'), 0)
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.ViewGroup (1)'), 0)
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (1)'), 0)
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.ViewGroup (2)'), 0)
 
-Mobile.verifyElementText(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - Hi, LAI YEE MAUNG'), 
-    'Hi, LAI YEE MAUNG')
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.widget.ImageView'), 0)
 
-Mobile.verifyElementText(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView - LAI YEE MAUNG'), 
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.ViewGroup (3)'), 0)
+
+Mobile.setText(findTestObject('Object Repository/Link-Bank-Account/android.widget.EditText - xxxxxxxxxxxx'), '210027514335', 
+    0)
+
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.EditText - LAI YEE MAUNG'), 
     'LAI YEE MAUNG')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.widget.TextView -'), 0)
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.EditText - 12ThaGaKa(N)193752'), 
+    '12/ThaGaKa(N)193752')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (2)'), 0)
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.EditText - 06151994'), '06/15/1994')
 
-Mobile.tap(findTestObject('Object Repository/Unlink_Bank_Account/android.view.ViewGroup (3)'), 0)
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.EditText - Female'), 'Female')
 
-Mobile.delay(10)
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.View'), 0)
+
+for (int i = 0; i <= 3; i++) {
+
+Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.ViewGroup (4)'), 0)
+
+}
+
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.TextView - Bank Linkage Successful'), 
+    'Bank Linkage Successful')
+
+Mobile.pressBack()
+
+Mobile.pressBack()
+
+Mobile.pressBack()
+
+Mobile.verifyElementText(findTestObject('Object Repository/Link-Bank-Account/android.widget.TextView - LAI YEE MAUNG'), 
+    'LAI YEE MAUNG')
+
+Mobile.delay(5)
 
 Mobile.closeApplication()
 

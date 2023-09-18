@@ -21,6 +21,29 @@ import org.openqa.selenium.Keys as Keys
 
 Mobile.startApplication('C:\\Users\\USER\\Desktop\\Bank_Linkage\\Subscriber\\app-uat-armeabi-v7a-release.apk', false)
 
+Mobile.delay(80)
+
+Mobile.pressBack()
+
+Mobile.pressBack()
+
+Mobile.tap(findTestObject('Object Repository/Login/android.view.View'), 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText'), '1', 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (1)'), '2', 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (2)'), '1', 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (3)'), '2', 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (4)'), '1', 0)
+
+Mobile.setText(findTestObject('Object Repository/Login/android.widget.EditText (5)'), '2', 0)
+
+Mobile.delay(10)
+/////////////////////
+
 Mobile.tap(findTestObject('Object Repository/Cashin_From_Bank/android.view.ViewGroup'), 0)
 
 Mobile.tap(findTestObject('Object Repository/Cashin_From_Bank/android.view.ViewGroup (1)'), 0)
@@ -51,6 +74,20 @@ Mobile.verifyElementText(findTestObject('Object Repository/Cashin_From_Bank/andr
 Mobile.tap(findTestObject('Object Repository/Cashin_From_Bank/android.view.View (1)'), 0)
 
 Mobile.tap(findTestObject('Object Repository/Cashin_From_Bank/android.view.ViewGroup (4)'), 0)
+
+Mobile.delay(5)
+
+for (int i = 0; i <= 2; i++) {
+	
+	Mobile.tap(findTestObject('Object Repository/Link-Bank-Account/android.view.ViewGroup (4)'), 0)
+	
+	}
+	
+Mobile.pressBack()
+
+Mobile.pressBack()
+
+Mobile.delay(10)
 
 Mobile.closeApplication()
 
